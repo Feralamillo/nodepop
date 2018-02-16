@@ -12,7 +12,7 @@ const anuncioSchema = mongoose.Schema({
 });
 
 // crear el modelo
-const Anuncio = mongoose.model("Agente", agenteSchema);
+const Anuncio = mongoose.model("Anuncio", anuncioSchema);
 
 // exportar el modelo
 module.exports = Anuncio;

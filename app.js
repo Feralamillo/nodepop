@@ -9,7 +9,7 @@ var bodyParser = require("body-parser");
 require("./lib/connectMongoose");
 
 // cargar los modelos
-require("./models/anuncios");
+require("./models/Anuncio");
 
 var index = require("./routes/index");
 var users = require("./routes/users");
@@ -30,6 +30,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", index);
 app.use("/users", users);
+
+// Middleware de la API
+app.use("/apiv1/anuncios", require("./routes/apiv1/anuncios"));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
