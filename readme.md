@@ -6,4 +6,4 @@ Todo:
 
 * Crear vista paginada de anuncios
 * Crear vista de tags
-*
+* Cargar datos de un file
