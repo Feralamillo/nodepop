@@ -44,4 +44,15 @@ router.post("/", (req, res, next) => {
   });
 });
 
+// Incluir las rutas de la API para los tipos de tags
+router.get(
+  "/anuncios/tag/:tag(work|lifestyle|motor|mobile)",
+  (req, res, next) => {
+    console.log("req.params", req.params);
+    res.send("muy bien Fernando!!");
+  }
+);
+
+// Incluir las rutas de la API para filtrar por precio
+
 module.exports = router;
