@@ -5,7 +5,7 @@ const router = express.Router();
 
 const Anuncio = require("../../models/Anuncio");
 
-router.get("/", (req, res, next) => {
+router.get("/", async (req, res, next) => {
   /* With Callback
   Anuncio.find().exec((err, docs) => {
     if (err) {
@@ -16,15 +16,8 @@ router.get("/", (req, res, next) => {
     res.json({ success: true, result: docs });
   });*/
 
-  Anuncio.find()
-    .exec()
-    .then(docs => {
-      res.json({ success: true, result: docs });
-    })
-    .catch(err => {
-      next(err);
-      return;
-    });
+  const docs = await Anuncio.find().exec();
+  res.json({ success: true, result: docs });
 });
 
 router.post("/", (req, res, next) => {
