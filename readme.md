@@ -15,5 +15,4 @@ Esta app requiere de mongodb para funcionar. Está diseñado para funcionar en l
 
 ## Documentación API
 
-Search query
-http://localhost:3000/anuncios?start=1&limit=3&sort=name&tag=lifestyle
+GET

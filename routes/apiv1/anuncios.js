@@ -6,18 +6,13 @@ const router = express.Router();
 const Anuncio = require("../../models/Anuncio");
 
 router.get("/", async (req, res, next) => {
-  /* With Callback
-  Anuncio.find().exec((err, docs) => {
-    if (err) {
-      next(err);
-      return;
-    }
-    // Si no hay error
+  try {
+    const docs = await Anuncio.find().exec();
     res.json({ success: true, result: docs });
-  });*/
-
-  const docs = await Anuncio.find().exec();
-  res.json({ success: true, result: docs });
+  } catch (err) {
+    next(err);
+    return;
+  }
 });
 
 router.post("/", (req, res, next) => {

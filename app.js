@@ -51,13 +51,25 @@ app.use(function(err, req, res, next) {
     err.message = `Not valid - ${errInfo.param} ${errInfo.msg}`;
   }
 
+  res.status(err.status || 500);
+
+  // Si es una petición de API, respondemos con JSON
+  if (isAPI(req)) {
+    res.json({ success: false, error: error.message });
+    return;
+  }
+  // respondo con una página de error
+
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
 
   // render the error page
-  res.status(err.status || 500);
   res.render("error");
 });
+
+function isAPI(req) {
+  return req.originalUrl.indexOf("/apiv") === 0;
+}
 
 module.exports = app;

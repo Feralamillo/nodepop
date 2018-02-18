@@ -1,0 +1,53 @@
+{
+  "anuncios": [
+    {
+      "nombre": "Bicicleta con motor",
+      "venta": true,
+      "precio": 200,
+      "foto": "bici-motor.jpg",
+      "tags": ["motor", "lifestyle"]
+    },
+    {
+      "nombre": "Mercedes",
+      "venta": true,
+      "precio": 1830,
+      "foto": "mercedes.jpg",
+      "tags": ["motor", "work"]
+    },
+    {
+      "nombre": "Moto",
+      "venta": true,
+      "precio": 730,
+      "foto": "moto.jpg",
+      "tags": ["motor", "lifestyle"]
+    },
+    {
+      "nombre": "R6",
+      "venta": true,
+      "precio": 2300,
+      "foto": "moto-r6.jpg",
+      "tags": ["motor"]
+    },
+    {
+      "nombre": "Nokia",
+      "venta": true,
+      "precio": 20,
+      "foto": "nokia.jpg",
+      "tags": ["mobile", "work"]
+    },
+    {
+      "nombre": "Pick-up",
+      "venta": true,
+      "precio": 3400,
+      "foto": "pick-up.jpg",
+      "tags": ["motor", "work"]
+    },
+    {
+      "nombre": "Telefono oficina",
+      "venta": true,
+      "precio": 15,
+      "foto": "siemens-phone.jpg",
+      "tags": ["work"]
+    }
+  ]
+}

@@ -8,16 +8,28 @@
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
 
-    <h2>Condición de busqueda</h2>
-    <% if (condicion.user=='Fernando') { %>
-    <p>111</p>
-    <% } %>
-
-    <h2>Anuncios</h2>
-    <% users.forEach((user)=> { %>
-      <p><%= user.nombre %></p>
-      <p><%= user.precio %></p>
-    <% }) %>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Etiquetas</th>
+          <th>Precio</th>
+          <th>Venta o Compra</th>
+          <th>Foto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let i = 0; i < docs.length; i++) { %>
+          <tr>
+            <td><%= docs[i].nombre %></td>
+            <td><%= docs[i].tags %></td>
+            <td><%= ( docs[i].precio !== null ) ? docs[i].precio : 'Undefined' %></td>
+            <td><%= ( docs[i].venta == true ) ? 'Se vende' : 'se compra' %></td>
+            <td><img class="imagen-anuncio" src="./images/<%= docs[i].foto %>"></td>
+          </tr>
+          <% } %>
+        </tbody>
+    </table>
 
   </body>
 </html>
