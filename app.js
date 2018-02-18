@@ -33,6 +33,7 @@ app.use("/users", users);
 
 // Middleware de la API
 app.use("/apiv1/anuncios", require("./routes/apiv1/anuncios"));
+app.use("/apiv1/tags", require("./routes/apiv1/tags"));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
